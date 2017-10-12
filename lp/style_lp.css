@@ -14,8 +14,6 @@ html, body{
 	margin: auto;
 	/*background: url(https://i.imgur.com/GEqmfWL.jpg);*/
 	background: url(https://i.imgur.com/qbDf63N.jpg) no-repeat 50% 50%;
-	/*background: repeating-linear-gradient(45deg, #2b2b2b 0%,
-		#2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15 px;*/
 	display: table;
 	top: 0;
 	background-size: cover;
@@ -38,9 +36,7 @@ html, body{
 .content h1{
 	font-family: 'Roboto', sans-serif;
   color:#E1EFE9;
-	/*text-shadow: -1px 0 #6BD69E, 0 1px #6BD69E, 1px 0 #6BD69E, 0 -1px #6BD69E;*/
-	/*text-shadow: 1px 1px 10px #6BD69E;*/
-  font-size: 125px;
+	font-size: 125px;
 	font-weight: lighter;
 	text-shadow: 2px 4px 4px rgba(0,0,0,0.5);
 
