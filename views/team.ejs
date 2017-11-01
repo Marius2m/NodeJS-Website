@@ -1,0 +1,58 @@
+<% include partials/header %>
+<link rel="stylesheet" href="assets/css/team.css">
+
+
+<div class="background-image"></div>
+
+<div class="container">
+	<div class="container-title">
+		Dental Glow Team
+	</div>
+
+	<div class="content">
+		<div class="division">Doctors</div>
+		<hr class="division-separator">
+		<div class="team">
+			<% data.map(staff => { %>
+				<% if(staff.is_doctor) { %>
+					<div class="staff">
+						<img class="staff-img" src="assets/img/team/1.png">
+						<div class="staff-details">
+							<div class="staff-name">
+								<%= staff.first_name %> <%= staff.lsat_name %>
+							</div>
+							<div class="staff-role">
+								<%= staff.position %>
+							</div>
+						</div>
+					</div>
+				<% } %>
+			<% }) %>
+		</div>
+	</div>
+	
+	<div class="space"></div>
+
+	<div class="content">
+		<div class="division">Assitents</div>
+		<hr class="division-separator">
+		<div class="team">
+			<% data.map(staff => { %>
+				<% if(staff.is_assistent) { %>
+					<div class="staff">
+						<img class="staff-img" src="assets/img/team/1.png">
+						<div class="staff-details">
+							<div class="staff-name">
+								<%= staff.first_name %> <%= staff.lsat_name %>
+							</div>
+							<div class="staff-role">
+								<%= staff.position %>
+							</div>
+						</div>
+					</div>
+				<% } %>
+			<% }) %>
+		</div>
+	</div>
+</div>
+<% include partials/footer %>

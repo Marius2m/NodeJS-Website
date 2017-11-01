@@ -1,0 +1,98 @@
+.background-image {
+	background: url(/assets/img/team/team.jpg) no-repeat center; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    min-height: 400px;
+}
+
+.container {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.container-title {
+	width: 100%;
+	text-align: center;
+	color: #31477F;
+	font-size: 3.5em;
+	font-weight: lighter;
+	padding: 70px;
+}
+
+.content {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.content .division {
+	width: 100%;
+	text-align: center;
+	font-size: 2.3em;
+	color: #31477F;
+	font-weight: lighter;
+	padding: 40px;
+}
+
+.content .division-separator {
+	width: 50%;
+	border-top: 1px solid #8c8b8b;
+	opacity: .2;
+}
+
+.content .team {
+	display: flex;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	flex-wrap: wrap;
+}
+
+.team .staff {
+	margin: 15px;	
+	display: flex;
+	flex-direction: column;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+
+.team .staff .staff-img {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	-webkit-transition: all .25s ease-in-out;
+	   -moz-transition: all .25s ease-in-out;
+	    -ms-transition: all .25s ease-in-out;
+	     -o-transition: all .25s ease-in-out;
+	        transition: all .25s ease-in-out;
+}
+
+.team .staff .staff-img:hover {
+	-webkit-transform: scale(1.05);
+	   -moz-transform: scale(1.05);
+	    -ms-transform: scale(1.05);
+	     -o-transform: scale(1.05);
+	        transform: scale(1.05);
+}
+
+.staff .staff-details {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.staff-details .staff-name {
+	font-size: 1.3em;
+	opacity: 0.6;
+}
+
+.staff-details .staff-role {
+	margin-top: 10px;
+	font-size: 1.1em;
+	opacity: 0.8;
+	color: #31477F;
+}
+
+.space {
+	margin-top: 25px;
+}

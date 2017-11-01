@@ -1,0 +1,79 @@
+/* FOOTER */
+.container-ft {
+  width: 100%;
+  background: #212121;
+}
+
+ul {
+	list-style: none;
+}
+
+.wrapper {
+	padding-top: 45px;
+	display: flex;
+	justify-content: space-between;
+	opacity: .6;
+	width: 80%;
+	margin-left: 10%;
+  padding-bottom: 15px;
+}
+
+.column {
+  font-size: 14px;
+  color: #efefef;
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+}
+
+.column li {
+	margin-bottom: 15px;
+}
+
+.column-title {
+	opacity: .4;
+	text-transform: uppercase;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.copyright {
+	opacity: .6;
+	color: #efefef;
+	width: 80%;
+	margin-left: 10%;
+	font-size: 14px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+a .made-by-ref{
+	color: inherit;
+	text-decoration: none;
+}
+
+/* ZigZag Split */
+.ct-zz {
+  position: relative;
+  padding: 8px 8px 32px 8px;
+}
+
+.ct-zz:after {
+  background: linear-gradient(-45deg, #212121 16px, transparent 0), linear-gradient(45deg, #212121 16px, transparent 0);
+  background-position: left-bottom;
+  background-repeat: repeat-x;
+  background-size: 32px 32px;
+  content: " ";
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 32px;
+}
+
+.separator-footer {
+  border-top: 1px solid #8c8b8b;
+  opacity: .2;
+  width: 90%;
+}
