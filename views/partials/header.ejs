@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Marius Mircea">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+    <title> Dent Glow </title>
+  </head>
+
+  <body>
+  	<navabar class="navbar">
+  		<div class="left-menu">
+  			<%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
+          <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>"> 
+            <%=page%> 
+          </a>
+        <%});%>
+  		</div>
+		<div class="branding">
+			Denta Glow
+		</div>
+
+		<div class="right-menu right">
+			<button class="ui button inverted green right">Login</button>
+			<button class="ui button inverted red">Register</button>
+		</div>
+  	</navabar>
+  
