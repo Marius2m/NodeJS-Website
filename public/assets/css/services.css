@@ -1,0 +1,186 @@
+.showcase {
+  min-height: 400px;
+  background: url('../img/services/Dentist.jpg') no-repeat 10% 45%;
+  background-size: cover;
+}
+
+.showcase .description {
+  color: #55b0ed;
+  text-align: center;
+  padding-top: 100px;
+  font-size: 1.5em;
+  font-weight: lighter;
+}
+
+.showcase .title {
+  font-size: 2.5em;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  color: #31477F;
+  width: 100%;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 2.5em;
+  padding: 50px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+}
+
+#foo {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+}
+
+
+body {
+  background: #EFEFEF;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+.archive {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.entry {
+  position: relative;
+  overflow: hidden;
+  margin: 30px 0;
+  padding: 20px 20px 4em 20px;
+  background: #FFF;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: 0 0 15px #999;
+}
+
+.entry-title,
+.entry-title a {
+  margin-top: 0;
+  font-family: Oswald, sans-serif;
+  color: #333;
+  text-decoration: none;
+}
+
+.entry-title a:hover {
+  color: #555;
+}
+
+.entry-img, .entry-video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 10px;
+  }
+
+.more-link {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background: #555;
+  color: #FFF;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 0 10px #000;
+}
+
+.more-link:hover {
+  background: #5E5E5E;
+}
+
+.more-link:after {
+	content: "\2193";
+	margin-left: 8px;
+	font-size: .8em;
+}
+
+.more-link.open:after {
+	content: "\2191";
+}
+
+
+
+
+.separator {
+  margin-top: 70px;
+  border-top: 1px solid #8c8b8b;
+  opacity: .2;
+  width: 90%;
+}
+
+.tables{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description{
+  color: #31477F;
+  width: 100%;
+  font-weight: lighter;
+  font-size: 1.75em;
+  padding-left: 20px;
+}
+
+#prices {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 95%;
+    /*table-layout: fixed;*/
+    margin: 0px auto;
+}
+
+#prices td, #prices th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#prices td{
+  width: 75%;
+}
+
+#prices tr:hover {background-color: #ddd;}
+
+#prices th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #55b0ed;
+    color: white;
+}
+
+.section-container {
+  position: relative;
+  overflow: hidden;
+  padding-top: 20px;
+}
+
+/* Quote Div */
+#quote{
+  margin-top: 60px;
+  width: 100%;
+  padding: 20px 20%;
+  background: url(../img/quote.png) no-repeat center 20px;
+  background-color: #efefef;
+  color: #4e4e4e;
+  font-size: 20px;
+  line-height: 1.6em;
+  text-align: center;
+  margin-bottom: -30px;
+}
+
+#quote blockquote{
+  padding-top: 40px;
+}

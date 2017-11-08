@@ -1,0 +1,94 @@
+<% include partials/header %>
+<link rel="stylesheet" href="assets/css/contact.css">
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAui5gB7t9kAocm2Iqy11H-ZijXuS3P2og"></script>
+
+<script>
+google.maps.event.addDomListener(window, 'load', init);
+
+function init() {
+    // Basic options for a simple Google Map
+    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+    var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 11,
+
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#6195a0"}]},{"featureType":"administrative.province","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"lightness":"0"},{"saturation":"0"},{"color":"#f5f5f2"},{"gamma":"1"}]},{"featureType":"landscape.man_made","elementType":"all","stylers":[{"lightness":"-3"},{"gamma":"1.00"}]},{"featureType":"landscape.natural.terrain","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#bae5ce"},{"visibility":"on"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#fac9a9"},{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"labels.text","stylers":[{"color":"#4e4e4e"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#787878"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"transit.station.airport","elementType":"labels.icon","stylers":[{"hue":"#0a00ff"},{"saturation":"-77"},{"gamma":"0.57"},{"lightness":"0"}]},{"featureType":"transit.station.rail","elementType":"labels.text.fill","stylers":[{"color":"#43321e"}]},{"featureType":"transit.station.rail","elementType":"labels.icon","stylers":[{"hue":"#ff6c00"},{"lightness":"4"},{"gamma":"0.75"},{"saturation":"-68"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#eaf6f8"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c7eced"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"lightness":"-49"},{"saturation":"-53"},{"gamma":"0.79"}]}]
+    };
+
+    // Get the HTML DOM element that will contain your map
+    // We are using a div with id="map" seen below in the <body>s
+    var mapElement = document.getElementById('map');
+
+    // Create the Google Map using our element and options defined above
+    var map = new google.maps.Map(mapElement, mapOptions);
+
+    // Let's also add a marker while we're at it
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(40.6700, -73.9400),
+        map: map,
+        title: 'Snazzy!'
+    });
+}
+</script>
+
+
+<div class="showcase">
+      <div class="description">
+        <p class="title">Do you have a question for us?</p>
+      </div>
+</div>
+
+<div class="wrap">
+  <h1 class="section-title">Contact us!</h1>
+  <div class="main_content">
+    <div id="contact_section">
+      <form class="contact_form">
+        <input clas="name field" type="text" maxlength="64" placeholder="Full Name" value="" required/>
+        <input class"email field" type="email" maxlength="64" placeholder="Email" value="" required/>
+        <input class="subject field" type="text" maxlength="32" placeholder="Subject" value="" required/>
+        <textarea class="message field area" placeholder="Message" rows="8" required></textarea>
+        <div class="bttn"> <button class="message_button" style="width:100px" type="submit">Send Message</button> </div>
+      </form>
+    </div>
+    <div id="contact_other">
+      <h4><strong> Dent Glow Clinic </strong></h4>
+      <p> Timisoara, Emanuil Gojdu, nr. 10, Romania </p>
+      <p></p>
+      <p> <strong> Working Program </strong> </p>
+      <p> Luni      09:00 - 15:00 </p>
+      <p> Marti     09:00 - 16:30 </p>
+      <p> Miercuri  12:00 - 18:30 </p>
+      <p> Joi       09:00 - 16:00 </p>
+      <p> Vineri    10:00 - 14:00 </p>
+      <p></p><p></p><p></p>
+      <p> <strong> Appointments and Other issues </strong> </p>
+      <p> E-Mail: contact@dentglow.ro </p>
+      <p> Mobile Phone: 0799520378    </p>
+      <p> Landline: 0256 324 541      </p>
+      <p></p><p></p><p></p>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+<hr class="separator">
+
+
+<div class="archive">
+  <div class="section-title">
+    Where to find us
+  </div>
+  <div id="map"></div>
+</div>
+
+<div id="quote">
+  <blockquote>Life is short, so smile while you still have teeth!</blockquote>
+</div>
+
+
+<% include partials/footer %>

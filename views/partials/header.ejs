@@ -15,13 +15,13 @@
   	<navabar class="navbar">
   		<div class="left-menu">
   			<%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
-          <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>"> 
-            <%=page%> 
+          <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>">
+            <%=page%>
           </a>
         <%});%>
   		</div>
 		<div class="branding">
-			Denta Glow
+			Dent Glow
 		</div>
 
 		<div class="right-menu right">
@@ -29,4 +29,3 @@
 			<button class="ui button inverted red">Register</button>
 		</div>
   	</navabar>
-  

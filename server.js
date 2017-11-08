@@ -1,10 +1,10 @@
-var express 	= require("express"),
-	db 			= require("mysql"),
-	db_config	= require('./db/config'),
-	app 		= express(),
-	bodyParser  = require('body-parser'),
-	pool_config	= require('./db/init'),
-	pool 		= pool_config(db_config);
+var express 	  = require("express"),
+	  db 			    = require("mysql"),
+	  db_config	  = require('./db/config'),
+	  app 		    = express(),
+	  bodyParser  = require('body-parser'),
+  	pool_config	= require('./db/init'),
+	  pool 		    = pool_config(db_config);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
@@ -23,6 +23,16 @@ app.get('/home', (req, res) => {
 // TEAM
 app.get('/team', (req, res) => {
 	handle_db_call(req, res, 'team', 'SELECT * FROM staff');
+});
+
+//SERVICES
+app.get('/services', (req, res) => {
+	res.render('services', {route:'services'});
+});
+
+//CONTACT
+app.get('/contact', (req, res) => {
+	res.render('contact_2', {route:'contact'});
 });
 
 app.listen(3000, () => {

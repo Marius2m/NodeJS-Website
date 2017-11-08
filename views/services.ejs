@@ -1,0 +1,227 @@
+<% include partials/header %>
+<link rel="stylesheet" href="assets/css/services.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function() {
+  var closeHeight = '0em'; /* Default "closed" height */
+	var moreText 	= 'Read More'; /* Default "Read More" text */
+	var lessText	= 'Read Less'; /* Default "Read Less" text */
+	var duration	= '1000'; /* Animation duration */
+  var easing = 'linear'; /* Animation easing option */
+
+	// Limit height of .entry-content div
+	$('.page-template-page_blog-php #content .entry, .archive #content .entry').each(function() {
+
+		// Set data attribute to record original height
+		var current = $(this).children('.entry-content');
+		current.data('fullHeight', current.height()).css('height', closeHeight);
+
+		// Insert "Read More" link
+		current.after('<a href="javascript:void(0);" class="more-link closed">' + moreText + '</a>');
+
+	});
+
+  // Link functinoality
+	var openSlider = function() {
+		link = $(this);
+		var openHeight = link.prev('.entry-content').data('fullHeight') + 'px';
+		link.prev('.entry-content').animate({'height': openHeight}, {duration: duration }, easing);
+		link.text(lessText).addClass('open').removeClass('closed');
+    	link.unbind('click', openSlider);
+		link.bind('click', closeSlider);
+	}
+
+	var closeSlider = function() {
+		link = $(this);
+    link.prev('.entry-content').animate({'height': closeHeight}, {duration: duration }, easing);
+		link.text(moreText).addClass('closed').removeClass('open');
+		link.unbind('click');
+		link.bind('click', openSlider);
+	}
+
+  	// Attach link click functionality
+	$('.more-link').bind('click', openSlider);
+
+});
+</script>
+
+
+<div class="showcase">
+      <div class="description">
+        <p class="title">Our quality services</p>
+      </div>
+</div>
+
+
+<div class="archive">
+  <div class="section-title">
+    Our services include
+  </div>
+	<div id="content">
+
+		<div class="post type-post status-publish format-standard hentry category-uncategorized entry">
+			<h2 class="entry-title"><a href="#">dental aesthetics</a></h2>
+			<div class="entry-content">
+        <img class="entry-img" src="assets/img/services/dental-aesthetics.jpg">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+        </div>
+		</div>
+
+		<div class="post type-post status-publish format-standard hentry category-uncategorized entry">
+			<h2 class="entry-title"><a href="#">pedodontics</a></h2>
+			<div class="entry-content">
+        <object type='application/x-shockwave-flash'class="entry-video" style='width:720px; height:480px;' data='https://www.youtube.com/v/09yk0ktMZfQ'>
+	         <param name='movie' value='https://www.youtube.com/v/09yk0ktMZfQ' />
+         </object>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet lectus et ligula sagittis blandit a eget odio. Suspendisse auctor sollicitudin justo, accumsan volutpat neque ornare molestie. Nulla augue ligula, accumsan vitae aliquam vel, viverra a ante. Phasellus porttitor interdum eleifend. Proin ac lorem eget sem interdum congue. Aenean sodales tellus non augue condimentum, sit amet porta sapien hendrerit. Etiam gravida turpis at elit placerat aliquam. Duis mattis velit vel odio adipiscing sodales.
+        </div>
+		</div>
+
+    <div class="post type-post status-publish format-standard hentry category-uncategorized entry">
+			<h2 class="entry-title"><a href="#">orthodontics</a></h2>
+			<div class="entry-content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </div>
+		</div>
+
+    <div class="post type-post status-publish format-standard hentry category-uncategorized entry">
+			<h2 class="entry-title"><a href="#">implantology</a></h2>
+			<div class="entry-content">
+				<p>Lorem ipsum dolor</p>
+			</div>
+		</div>
+
+    <div class="post type-post status-publish format-standard hentry category-uncategorized entry">
+			<h2 class="entry-title"><a href="#">dental surgery</a></h2>
+			<div class="entry-content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet lectus et ligula sagittis blandit a eget odio. Suspendisse auctor sollicitudin justo, accumsan volutpat neque ornare molestie. Nulla augue ligula, accumsan vitae aliquam vel, viverra a ante. Phasellus porttitor interdum eleifend. Proin ac lorem eget sem interdum congue. Aenean sodales tellus non augue condimentum, sit amet porta sapien hendrerit. Etiam gravida turpis at elit placerat aliquam. Duis mattis velit vel odio adipiscing sodales. Phasellus ac aliquet enim.</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<hr class="separator">
+
+
+<section class="tables">
+	<div class="section-title">
+		We offer great prices
+	</div>
+
+	<div class="section-container">
+    <p class="description"> General </p>
+    <table id="prices">
+      <tr>
+        <th>Treatment</th>
+        <th class="price">Price (LEI)</th>
+      </tr>
+      <tr>
+        <td>Oral Examination</td>
+        <td class="price">100</td>
+      </tr>
+      <tr>
+        <td>Periodic examination</td>
+        <td class="price">50</td>
+      </tr>
+    </table>
+
+   <br></br>
+   <p class="description"> Prophylaxis </p>
+   <table id="prices">
+     <tr>
+       <th>Treatment</th>
+       <th class="price">Price (LEI)</th>
+     </tr>
+     <tr>
+       <td>Prophylaxis - Children</td>
+       <td class="price">100</td>
+     </tr>
+     <tr>
+       <td>Prophylaxis - Adult</td>
+       <td class="price">50</td>
+     </tr>
+        <tr>
+          <td>Inhalation Sedation</td>
+          <td class="price">150</td>
+        </tr>
+        <tr>
+          <td>Deep Sedation</td>
+          <td class="price">1000</td>
+        </tr>
+        <tr>
+          <td>Tooth Sealing</td>
+          <td class="price">200</td>
+        </tr>
+    </table>
+
+    <br></br>
+
+    <p class="description"> Periodontology </p>
+    <table id="prices">
+      <tr>
+        <th>Treatment</th>
+        <th class="price">Price (LEI)</th>
+      </tr>
+      <tr>
+        <td>Periodontology consultation</td>
+        <td class="price">100</td>
+      </tr>
+      <tr>
+        <td>Gingival retractions</td>
+        <td class="price">500</td>
+      </tr>
+      <tr>
+        <td>Bone Addition</td>
+        <td class="price">500</td>
+      </tr>
+      <tr>
+        <td>Gingivectomy</td>
+        <td class="price">250</td>
+      </tr>
+    </table>
+
+    <br></br>
+
+    <p class="description"> Extractions </p>
+    <table id="prices">
+      <tr>
+        <th>Treatment</th>
+        <th class="price">Price (LEI)</th>
+      </tr>
+      <tr>
+        <td>Surgery consultation</td>
+        <td class="price">100</td>
+      </tr>
+      <tr>
+        <td>Tooth extraction</td>
+        <td class="price">100</td>
+      </tr>
+      <tr>
+        <td>Wisdom Tooth Extraction</td>
+        <td class="price">250</td>
+      </tr>
+      <tr>
+        <td>Sinus Lifting</td>
+        <td class="price">750</td>
+      </tr>
+      <tr>
+        <td>Consultation for implants</td>
+        <td class="price">100</td>
+      </tr>
+      <tr>
+        <td>Bredent/ MIS implant</td>
+        <td class="price">1500</td>
+      </tr>
+    </table>
+
+  </div>
+</section>
+
+<div id="quote">
+  <blockquote>Life is short, so smile while you still have teeth!</blockquote>
+</div>
+
+
+<% include partials/footer %>
