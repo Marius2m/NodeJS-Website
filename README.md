@@ -1,3 +1,3 @@
 # WAD
 
-## Initial configuration for the static page only HTML,CSS,JS
+## Initial configuration for the page only HTML,CSS,JS
