@@ -1,10 +1,11 @@
 .background-image {
-	background: url(/assets/img/team/team.jpg) no-repeat center; 
+	background: url(/assets/img/team/team.jpg) no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-    min-height: 400px;
+  min-height: 100vh;
+	background-attachment: fixed;
 }
 
 .container {
@@ -49,7 +50,7 @@
 }
 
 .team .staff {
-	margin: 15px;	
+	margin: 15px;
 	display: flex;
 	flex-direction: column;
 	-webkit-align-items: center;
@@ -95,4 +96,19 @@
 
 .space {
 	margin-top: 25px;
+}
+
+#quote{
+  width: 100%;
+  padding: 20px 20%;
+  background: url(../img/quote.png) no-repeat center 20px;
+  background-color: #efefef;
+  color: #4e4e4e;
+  font-size: 20px;
+  line-height: 1.6em;
+  text-align: center;
+}
+
+#quote blockquote{
+  padding-top: 40px;
 }

@@ -35,6 +35,16 @@ app.get('/contact', (req, res) => {
 	res.render('contact_2', {route:'contact'});
 });
 
+//LOGIN
+app.get('/login', (req, res) => {
+	res.render('login', {route:'login'});
+});
+
+//REGISTER
+app.get('/register', (req, res) => {
+	res.render('register', {route:'register'});
+});
+
 app.listen(3000, () => {
 	console.log("Server running on port 3000");
 });

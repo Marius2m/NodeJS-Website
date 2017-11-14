@@ -1,0 +1,124 @@
+$font-family:   "Roboto";
+$font-size:     14px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    font-size: $font-size;
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: linear-gradient(45deg, #49D49D 20%, #A2C7E5 80%);
+}
+
+.user {
+    width: 90%;
+    max-width: 350px;
+    margin: 10vh auto;
+    min-width: 300px;
+}
+
+.user_header {
+    text-align: center;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 1000ms ease-in-out 0.2s forwards;
+}
+
+.user_title {
+    font-size: $font-size;
+    margin-bottom: -10px;
+    font-weight: 500;
+    color: white;
+}
+
+.dentglow{
+  font-size: 50px !important;
+  padding-bottom: 40px;
+}
+
+.form {
+    margin-top: 40px;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #31477f;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 1000ms ease-in-out 0.3s forwards;
+}
+
+.form--no {
+    animation: NO 1s ease-in-out;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.form_input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: $font-family;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    transition: 0.3s;
+    border-bottom: solid 1px #f2f2f2;
+}
+
+.form_input:hover{
+  background: #dcefef;
+}
+
+.form_input:focus{
+  background: #b9dfdf;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-family: $font-family;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    color: white;
+    transition: 0.3s;
+    background-color: #31477f;
+    cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #395293;
+}
+
+
+
+@keyframes arrive {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+    50% {
+        background-position: 100% 0
+    }
+    100% {
+        background-position: 0 0
+    }
+}

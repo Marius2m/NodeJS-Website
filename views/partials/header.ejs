@@ -11,21 +11,21 @@
     <title> Dent Glow </title>
   </head>
 
-  <body>
-  	<navabar class="navbar">
-  		<div class="left-menu">
-  			<%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
+<body>
+	<navabar class="navbar">
+      <div class="left-menu">
+        <%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
           <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>">
             <%=page%>
           </a>
-        <%});%>
-  		</div>
-		<div class="branding">
-			Dent Glow
-		</div>
-
-		<div class="right-menu right">
-			<button class="ui button inverted green right">Login</button>
-			<button class="ui button inverted red">Register</button>
-		</div>
-  	</navabar>
+          <%});%>
+      </div>
+      <div class="branding">
+  		    Dent Glow
+      </div>
+      <div class="right-menu right">
+        <a class="ui button inverted green right" href="/login">Login</a>
+        <a class="ui button inverted red"         href="/register">Register</a>
+      </div>
+	</navabar>
+</body>

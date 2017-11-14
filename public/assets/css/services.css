@@ -1,7 +1,8 @@
 .showcase {
-  min-height: 400px;
+  min-height: 100vh;
   background: url('../img/services/Dentist.jpg') no-repeat 10% 45%;
   background-size: cover;
+    background-attachment: fixed;
 }
 
 .showcase .description {
@@ -169,7 +170,6 @@ p {
 
 /* Quote Div */
 #quote{
-  margin-top: 60px;
   width: 100%;
   padding: 20px 20%;
   background: url(../img/quote.png) no-repeat center 20px;

@@ -126,7 +126,7 @@ header a:hover{
 
 
 #showcase{
-  min-height: 400px;
+  min-height: 600px;
   background: url('../img/team/team.jpg') no-repeat 10% 45%;
   background-size: cover;
   text-align: center;
@@ -160,8 +160,7 @@ hr.style2{
 
 /* Quote Div */
 #quote{
-  margin-top: 60px;
-  width: 60%;
+  width: 80%;
   padding: 20px 20%;
   background: url(../img/quote.png) no-repeat center 20px;
   background-color: #efefef;
