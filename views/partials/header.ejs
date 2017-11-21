@@ -14,7 +14,7 @@
 <body>
 	<navabar class="navbar">
       <div class="left-menu">
-        <%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
+        <%['home', 'services', 'team', 'account', 'contact', 'logout'].map((page) => {%>
           <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>">
             <%=page%>
           </a>

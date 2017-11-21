@@ -16,6 +16,10 @@ body {
     background: linear-gradient(45deg, #49D49D 20%, #A2C7E5 80%);
 }
 
+.banner-message {
+  
+}
+
 .user {
     width: 90%;
     max-width: 350px;
