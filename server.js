@@ -10,7 +10,10 @@ var express 	  = require("express"),
 	 	routes 			= require('routes'),
 	  fs          = require('fs');
 	 	user    		= require('./routes/user'),
-		admin       = require('./routes/admin');
+		admin       = require('./routes/admin'),
+		fileUpload  = require('express-fileupload'),
+		busboy      = require('then-busboy');
+
 
 		app.set('views', __dirname + '/views');
 
@@ -30,6 +33,7 @@ var express 	  = require("express"),
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"))
+app.use(fileUpload());
 
 // INDEX
 app.get('/', (req, res) => {
@@ -108,7 +112,8 @@ app.get('/register', (req, res) => {
 });
 
 app.get('/admin', (req, res) => {
-	res.render('admin', {msg: ""});
+	res.render('admin', {msg: "", user: req.session.user});
+	console.log(req.session.user.user_name + req.session.user.is_admin);
 });
 
 

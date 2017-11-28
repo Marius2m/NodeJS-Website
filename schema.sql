@@ -305,6 +305,7 @@ CREATE TABLE  `postT`(
     `picture_id` text,
     `text_area` text,
     `youtube_link` text,
+    `image` varchar(255),
 	PRIMARY KEY(`id`)
 ) ENGINE=InnoDB;
 INSERT INTO `postT`(`title`, `picture_id`, `youtube_link`, `text_area`) 
@@ -338,7 +339,7 @@ CREATE TABLE `pricesT`(
 
 INSERT INTO `pricesT` (`title`,`t1`,`p1`) VALUES ("Promotions", "treatment_text", "price_text");
 INSERT INTO pricesT (title,`t1`,`t2`,`t3`,`t4`,`t5`,`p1`,`p2`,`p3`,`p4`,`p5`) 
-VALUES ('Prophylaxis','Prophylaxis - Children','Prophylaxis - Adult','Inhalation Sedation','Deep Sedation','Tooth Sealing','100','50','150','1000','200');
+	VALUES ('Prophylaxis','Prophylaxis - Children','Prophylaxis - Adult','Inhalation Sedation','Deep Sedation','Tooth Sealing','100','50','150','1000','200');
 
 
 #==========================BLABLA USER====================
@@ -348,14 +349,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `last_name` text NOT NULL,
   `user_name` varchar(20) NOT NULL,
   `password` varchar(15) NOT NULL,
+  `is_admin` int DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 DROP TABLE IF EXISTS `users`;
 
-INSERT INTO `users`(`first_name`,`last_name`,`user_name`, password) 
+INSERT INTO `users`(`first_name`,`last_name`,`user_name`, `password`) 
 	VALUES ("ale", "ale", "ale", "ale");
-
+INSERT INTO `users` (`first_name`,`last_name`,`user_name`, `password`, `is_admin`)
+	VALUES ('admin','admin','admin','admin',1);
 
 
 

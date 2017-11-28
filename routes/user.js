@@ -15,7 +15,7 @@ exports.login = function(req, res){
     var name = post.user_name;
     var pass = post.password;
 
-    var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"' and password = '"+pass+"'";                          
+    var sql="SELECT id, first_name, last_name, user_name, is_admin FROM `users` WHERE `user_name`='"+name+"' and password = '"+pass+"'";                          
     pool.getConnection((err, connection) => {
   		if(err) throw err;
   		connection.query(sql, (error, rows) => {

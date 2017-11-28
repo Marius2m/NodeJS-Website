@@ -4,35 +4,53 @@ var db          = require("mysql"),
     pool 		    = pool_config(db_config),
     moment      = require('moment'),
     nodemailer  = require('nodemailer'),
-    exphbs      = require('express-handlebars');
+    exphbs      = require('express-handlebars'),
+    fileUpload  = require('express-fileupload'),
+    busboy      = require('then-busboy');
 
 exports.adminPanel = function (req, res){
   if(req.method == "POST"){
     var post    = req.body;
     var title   = post.title;
-    var picture = '10';
+    //var picture = '10';
     var youtube = post.youtube;
     var text    = post.textarea;
 
-    console.log("title:" + title);
-    console.log("youtube:" + youtube);
-    console.log("text:" + text);
 
-    var sql = "INSERT INTO `postT`(`title`,`picture_id`,`youtube_link`,`text_area`) VALUES ('" + title + "','" + picture + "','" + youtube + "','" + text + "')";
-    console.log(sql);
-    pool.getConnection((err, connection) => {
-      if(err) throw err;
-      connection.query(sql, (error, rows) => {
-        connection.release();
-        if(error){
-          res.render('admin', {msg: "Failed to make POST", error: 1});
-        }else{
-          res.render('admin', {msg: "POST successfully"});
+    var user = req.session.user;
+    userId   = req.session.userId;
+
+    console.log("user: " + user);
+    console.log("userId: " + userId);
+
+    if(!req.files)
+      return res.status(400).send('No files were uploaded.');
+
+    var file     = req.files.uploaded_image;
+    var img_name = file.name;
+
+    if(file.mimetype == "image/jpeg" || file.mimetype == "image/png"){
+      file.mv('public/assets/img/services/'+file.name, function(err){
+        if(err){
+          return res.status(500).send(err);
         }
+        var sql   = "INSERT INTO `postT`(`title`,`youtube_link`,`text_area`,`image`) VALUES ('" + title + "','" + youtube + "','" + text + "','" + img_name + "')";
+        pool.getConnection((err, connection) => {
+          if(err) throw err;
+          connection.query(sql, (error, rows) => {
+            connection.release();
+            if(error){
+              res.render('admin', {msg: "Failed to make POST", error: 1});
+            }else{
+              res.render('admin', {msg: "POST successfully", user: user});
+            }
+          });
+        });
       });
-    });
-    //res.render('admin', {msg: "POST successfully"});
+    }else{
+      res.render('admin', {msg: "Failed to make POST (not admin/ wrong img format)", error: 1});
+    }
   }else{
     res.render('admin', {msg: "Failed to make POST", error: 1});
   }
-}
+};

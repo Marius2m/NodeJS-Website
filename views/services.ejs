@@ -86,8 +86,8 @@ $(document).ready(function() {
         <h2 class="entry-title"><a href="#"><%= postT[i].title %></a></h2>
         <div class="entry-content">
           <% if(postT[i].youtube_link != null) { %>
-          <object type='application/x-shockwave-flash'class="entry-video" style='width:720px; height:480px;' data='https://www.youtube.com/v/09yk0ktMZfQ'>
-            <param name='movie' value='<= postT[i].youtube_link %>' />
+          <object type='application/x-shockwave-flash'class="entry-video" style='width:720px; height:480px;' data='<%= postT[i].youtube_link %>'>
+            <param name='movie' value='<%= postT[i].youtube_link %>' />
           </object>
           <% } %>
           <% if(postT[i].text_area != null) { %>
@@ -95,6 +95,9 @@ $(document).ready(function() {
           <% } %>
           <% if(postT[i].picture_id != null){ %>
           <img class="entry-img" src="assets/img/services/<%= postT[i].picture_id %>.jpg">
+          <% } %>
+          <% if(postT[i].image != null){ %>
+          <img src="assets/img/services/<%=postT[i].image%>">
           <% } %>
         </div>
       </div>

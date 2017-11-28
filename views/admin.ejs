@@ -1,14 +1,19 @@
 <body>
-  <form role="form" method="post" action="/adminPanel">
+  <% if(user.is_admin == 1){ %>
+  <form role="form" method="post" action="/adminPanel" enctype="multipart/form-data">
     <% if (msg.length < 2){ %>
     <p> <%= msg %> </p>
     <% }else{ %>
     <p> <%= msg %> </p>
     <% } %>
-    <input for="title" name="title" type="text" placeholder="Table Title" required>
-    <input for="picture" name="picture" type="file" accept="image/*">
-    <input for="youtube" name="youtube" type="text" placeholder="YouTube Link">
-    <input for="textarea" name="textarea" type="text" placeholder="Description">
+    <input for="title"           name="title"           type="text"  placeholder="Table Title" required>
+    <!--<input for="picture"         name="picture"         type="file"  accept="image/*">-->
+    <input for="uploaded_image"  name="uploaded_image"  type="file"  accept=""/>
+    <input for="youtube"         name="youtube"         type="text"  placeholder="YouTube Link">
+    <input for="textarea"        name="textarea"        type="text"  placeholder="Description">
     <button type="submit">Submit</button>
   </form>
+  <% }else{ %>
+    <p> I'm not sure how you found this page, but it's empty! <%= user.is_admin %> </p>
+  <% } %>
 </body>
