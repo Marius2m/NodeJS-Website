@@ -4,6 +4,7 @@
   "description": "## Initial configuration for the static page only HTML,CSS,JS",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,15 +19,14 @@
   },
   "homepage": "https://github.com/Marius2m/WAD#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "client-sessions": "^0.8.0",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
-    "express-handlebars": "^3.0.0",
-    "moment": "^2.19.2",
-    "mysql": "^2.15.0",
-    "nodemailer": "^4.4.0",
-    "mysql": "^2.15.0",
-    "routes": "^2.1.0"
+    "body-parser": "1.18.2",
+    "client-sessions": "0.8.0",
+    "ejs": "2.5.7",
+    "express": "4.16.2",
+    "express-handlebars": "3.0.0",
+    "moment": "2.19.2",
+    "mysql": "2.15.0",
+    "nodemailer": "4.4.0",
+    "routes": "2.1.0"
   }
 }

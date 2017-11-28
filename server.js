@@ -63,11 +63,6 @@ app.get('/account', (req, res) => {
 	res.render('account', {route:'account'});
 });*/
 
-// ACCOUNT
-app.get('/account', (req, res) => {
-	res.render('account', {route:'account'});
-});
-
 // SERVICES
 app.get('/services', (req, res) => {
 	connection.query('SELECT * FROM footerpage LIMIT 1', function (error, results, fields) {
@@ -153,39 +148,6 @@ app.post('/sendEmail', user.sendEmail)//call for sendEmail from contact Page
 
 app.get('/logout', user.logout);
 app.get('/account', user.account); //call for dashboard page after login
-
-var routes  = require('routes')
-var user    = require('./routes/user');
-var session = require('client-sessions');
-
-app.set('port', process.env.PORT || 8080);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(session({
-  cookieName: 'session',
-  secret: 'eg[isfd-8yF9-7w2315df{}+Ijsli;;to8',
-  duration: 30 * 60 * 1000,
-  activeDuration: 5 * 60 * 1000,
-  httpOnly: true,
-  secure: true,
-  ephemeral: true
-}));
-
-
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-}));
-
-//Middleware
-//POST routes
-app.post('/login', user.login);//call for login post
-app.post('/register', user.register);//call for signup post
-
-app.get('/logout', user.logout);
-app.get('acount', user.account); //call for dashboard page after login
 
 
 //rest api to get all results
