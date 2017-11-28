@@ -9,7 +9,8 @@ var express 	  = require("express"),
 		moment      = require('moment'),
 	 	routes 			= require('routes'),
 	  fs          = require('fs');
-	 	user    		= require('./routes/user');
+	 	user    		= require('./routes/user'),
+		admin       = require('./routes/admin');
 
 		app.set('views', __dirname + '/views');
 
@@ -106,6 +107,11 @@ app.get('/register', (req, res) => {
 	res.render('register', {route:'register', message: ''});
 });
 
+app.get('/admin', (req, res) => {
+	res.render('admin', {msg: ""});
+});
+
+
 app.listen(3000, () => {
 	console.log("Server running on port 3000");
 });
@@ -145,10 +151,12 @@ app.post('/login', user.login);//call for login post
 app.post('/register', user.register);//call for signup post
 app.post('/saveAppointment', user.saveAppointment);//call for create a new appointment post
 app.post('/sendEmail', user.sendEmail)//call for sendEmail from contact Page
+app.post('/adminPanel', admin.adminPanel);
 
 app.get('/logout', user.logout);
 app.get('/account', user.account); //call for dashboard page after login
-
+// ADMIN CONTROL PANEL
+//app.get('/adminPanel', admin.adminPanel);
 
 //rest api to get all results
 app.get('/data', function (req, res) {
