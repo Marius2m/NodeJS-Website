@@ -1,3 +1,7 @@
+body {
+  background: #EFEFEF;
+}
+
 .showcase {
   min-height: 100vh;
   background: url('../img/showcase.jpg') no-repeat center; //10% 45%;

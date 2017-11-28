@@ -1,0 +1,72 @@
+<% include partials/header %>
+
+<link rel="stylesheet" href="assets/css/account.css">
+<div class="showcase">
+  <div class="description">
+    <p class="title">Do you have an appointment to make?</p>
+  </div>
+</div>
+<div class="section-title">Your upcoming appointments</div>
+<% if(appointments.length > 0) { %>
+  <div class="wrap">
+    <div class="wrap_appointments">
+      <% appointments.forEach(item => { %>
+        <div class="contact_us_container your_appointment_container gradient-border">
+          <div class="contact_section">
+            <div class="contact_form">
+              <div class="field-in name"> <%= item.when %> </div>
+              <div class="field-in email"> Doctor: <%= item.doctor_name %></div>
+              <textarea class="message field-in" rows="8" disabled> Details: <%= item.description %></textarea>
+            </div>
+          </div>
+          <div id="contact_other">
+            <% if(item.is_cancelled) { %>
+              <div class="bttn">The appointment had been cancelled </div>
+              <% } else { %>
+                <!--<div class="bttn"> <button class="message_button remove_appointment" type="submit">Remove Appointment</button> </div> -->
+                <div class="bttn">
+                  <button class="message_button cancel_appointment">
+                    <a href='/appointment/<%=item.id%>'>Cancel Appointment</a>
+                  </button>
+                </div>
+                <% } %>
+              </div>
+            </div>
+            <hr class="sep2">
+            <% }) %>
+          </div>
+        </div>
+
+        <% } else { %>
+          <div class="text-empty">Looks like you have no appointments, scroll down to make one now!</div>
+
+          <% } %>
+
+          <hr class="separator">
+
+          <div class="wrap">
+            <div class="section-title">Make a new appointment today!</div>
+            <div class="contact_us_container">
+              <div class="contact_section">
+                <form class="contact_form" role="form" method="post" action="/saveAppointment">
+                  <input class="field-in name" for="date" name="date" type="text" maxlength="64" placeholder="Date: " value="" required/>
+                  <input class="field-in name" for="time" name="time" type="text" maxlength="64" placeholder="Hour: " value="" required/>
+                  <input class="field-in email" for="doctor" name="doctor" type="text" maxlength="64" placeholder="Doctor: " value="" required/>
+                  <textarea class="message field-in" for="message_txt" name="message_txt" placeholder="Message" rows="8" required></textarea>
+                  <div class="make_appointment_buttons">
+                    <div class="bttn"> <button class="message_button make_appointment" type="submit">Submit Appointment</button> </div>
+                    <div class="bttn"> <button class="message_button view_schedule" onclick="location.href = '/contact';" >Contact Page</button> </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <hr class="separator">
+
+          <div id="quote">
+            <blockquote>Life is short, so smile while you still have teeth!</blockquote>
+          </div>
+
+
+          <% include partials/footer %>

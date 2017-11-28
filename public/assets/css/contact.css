@@ -132,18 +132,6 @@ h1{
   height: 175px;
 }
 
-
-/*
-#contact_section{
-  border: 2px solid #31477F;
-  padding: 2em;
-  width: 400px;
-  text-align: center;
-  background: #FFFFFF;
-  left: 0;
-
-}*/
-
 #contact_other{
   margin-top: 50px;
   align-self: center;
@@ -225,7 +213,7 @@ textarea{
 
 /* All .ejs */
 .separator {
-  margin-top: 70px;
+  margin-top: 20px;
   border-top: 1px solid #8c8b8b;
   opacity: .2;
   width: 90%;

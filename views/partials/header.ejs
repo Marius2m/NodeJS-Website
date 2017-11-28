@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
     <title> Dent Glow </title>
   </head>
-
 <body>
 	<navabar class="navbar">
       <div class="left-menu">
-        <%['home', 'services', 'team', 'notices', 'contact'].map((page) => {%>
+        <%['home', 'services', 'team', 'account', 'contact'].map((page) => {%>
           <a class="navbar-link <%= route === page ? 'active' : '' %>" href="/<%=page%>">
             <%=page%>
           </a>
@@ -23,9 +22,16 @@
       <div class="branding">
   		    Dent Glow
       </div>
+      <% if (typeof user == 'undefined') { %>
       <div class="right-menu right">
         <a class="ui button inverted green right" href="/login">Login</a>
         <a class="ui button inverted red"         href="/register">Register</a>
       </div>
+      <% } else { %>
+        <div class="right-menu right" style="display: flex; align-items: center;">
+          <div class="nav_username"> <%= user.user_name %></div>
+          <a class="ui button inverted red"         href="/logout">Logout</a>
+        </div>
+      <% } %>
 	</navabar>
 </body>

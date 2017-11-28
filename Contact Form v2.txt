@@ -1,0 +1,152 @@
+c6e8d8
+------
+b7e2ce
+
+d0f0f0
+------
+cbf4f4
+
+
+<html>
+  <head>
+      <link href='https://fonts.googleapis.com/css?family=Rajdhani|Pacifico' rel='stylesheet' type='text/css'/>
+  </head>
+<body>
+  <div class="wrapper">
+    <div class="title">
+      Floating Contact Form
+    </div>
+    <form class="form">
+      <input type="text" class="name field-in font" placeholder="Your Name"/>
+      
+      <input type="text" class="email field-in font" placeholder="Email"/>
+      
+      <textarea class="message field-in font" placeholder="Message"></textarea> 
+      
+      <button class="submit font" href="#">Submit</button>
+    </form>  	
+    <div class="shadow"></div>
+  </div>
+  
+</body>
+</html>
+
+
+
+body{
+  overflow-y: scroll;
+  background-color: #EBEBEB;  
+}
+.title{
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 10px;
+  font-family: Rajdhani;
+  font-size: 32px;
+  color: #2E4B62;
+}
+.wrapper {
+  width: 50%;
+  height: 50%;
+  margin: 5% auto 0 auto; 
+}
+.font {
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
+.form {
+  text-align: center; 
+  -webkit-animation: bounce 1.5s infinite;
+  -moz-animation: bounce 1.5s infinite;
+  animation: bounce 1.5s infinite;
+}
+.shadow{
+  box-shadow: 0px 0px 20px 5px #AAA;
+  opacity: 0.5;
+  border-radius: 100px;
+  width: 45%; 
+  margin: 40px auto 0 auto;
+  padding: 0 10px;  
+  -webkit-animation: shadow 1.5s infinite;
+}
+.field-in {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 50%;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.name {
+  background-color: #a0d3d3;  
+  border-bottom: 5px solid #92cece;
+}
+.name:hover{
+  background-color: #c6e8d8;
+  border-bottom: 5px solid #b7e2ce;
+}
+.name:focus, .email:focus, .message:focus{
+  outline: none;
+  padding:15px;
+}
+.email {
+  background-color: #a0d3d3;  
+  border-bottom: 5px solid #92cece;
+}
+.email:hover{
+  background-color: #c6e8d8;
+  border-bottom: 5px solid #b7e2ce;
+}
+.message {   
+  background-color: #a0d3d3;
+  border-bottom: 5px solid #92cece;
+  overflow: hidden;
+  height: 50px;
+}
+.message:hover{
+  background-color: #c6e8d8;
+  border-bottom: 5px solid #b7e2ce;
+  height: 150px;
+}
+.message:focus{
+    background-color: #c6e8d8;
+  border-bottom: 5px solid #b7e2ce;
+  height: 150px;
+}
+.submit{
+  border-radius:5px;
+  padding:10px;
+  background-color: #31477f;  
+  border: none;
+  border-bottom: 5px solid #263e7c;  
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.submit:hover{
+  -webkit-transform: translate(0, 4px);
+  cursor: pointer;
+}
+::-webkit-input-placeholder {
+   color: black;
+}
+
+:-moz-placeholder { 
+   color: black;
+}
+
+::-moz-placeholder { 
+   color: black; 
+}
+
+:-ms-input-placeholder {  
+   color: black;  
+}
+
+
+

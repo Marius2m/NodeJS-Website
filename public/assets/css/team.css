@@ -1,3 +1,6 @@
+body {
+  background: #EFEFEF;
+}
 .background-image {
 	background: url(/assets/img/team/team.jpg) no-repeat center;
 	-webkit-background-size: cover;
@@ -98,9 +101,20 @@
 	margin-top: 25px;
 }
 
+
+.separator {
+  margin-top: 70px;
+  border-top: 1px solid #8c8b8b;
+  opacity: .2;
+  width: 90%;
+}
+
+
+
 #quote{
   width: 100%;
-  padding: 20px 20%;
+  padding: 5px 20%;
+  margin-bottom: -15px;
   background: url(../img/quote.png) no-repeat center 20px;
   background-color: #efefef;
   color: #4e4e4e;

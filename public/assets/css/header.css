@@ -4,13 +4,27 @@
 	display: flex;
 	-webkit-align-items: center;
 	        align-items: center;
-	height: 75px;
+	height: 55px;
 	animation: move 10s ease infinite;
+	transform: translate3d(0, 0, 0);
 	background: linear-gradient(45deg, #49D49D 20%, #A2C7E5 80%);
+	min-width: 500px;
 }
 
 .right-menu, .left-menu {
 	width: 42.5%;
+}
+
+.left-menu{
+	margin-left: 10px;
+}
+
+.nav_username {
+		font-size: 20;
+		opacity: .7;
+		padding-bottom: 2px;
+		margin-right: 15px;
+		border-bottom: 1px solid #31477F;
 }
 
 .branding {
@@ -50,6 +64,7 @@
 	display: flex;
 	-webkit-justify-content: flex-end;
 	        justify-content: flex-end;
+	margin-right: 20px;
 }
 
 .right-menu a {
