@@ -1,10 +1,14 @@
 var db          = require("mysql"),
     db_config	  = require('../db/config'),
     pool_config	= require('../db/init'),
+<<<<<<< HEAD
     pool 		    = pool_config(db_config),
     moment      = require('moment'),
     nodemailer  = require('nodemailer'),
     exphbs      = require('express-handlebars');
+=======
+    pool 		    = pool_config(db_config);
+>>>>>>> origin/node_js
 
 exports.login = function(req, res){
   var message = '';
@@ -14,7 +18,11 @@ exports.login = function(req, res){
     var post  = req.body;
     var name = post.user_name;
     var pass = post.password;
+<<<<<<< HEAD
 
+=======
+    console.log("HEREE");
+>>>>>>> origin/node_js
     var sql="SELECT id, first_name, last_name, user_name FROM `users` WHERE `user_name`='"+name+"' and password = '"+pass+"'";                          
     pool.getConnection((err, connection) => {
   		if(err) throw err;
@@ -25,17 +33,29 @@ exports.login = function(req, res){
         if(results.length){
           req.session.userId = results[0].id;
           req.session.user = results[0];
+<<<<<<< HEAD
 
+=======
+          console.log(results[0].id);
+>>>>>>> origin/node_js
           res.redirect('/account');
         }
         else{
           message = 'Wrong Credentials.';
+<<<<<<< HEAD
           res.render('login.ejs',{message: message});
+=======
+          res.render('login',{message: message});
+>>>>>>> origin/node_js
         }
   		});
   	});
   } else {
+<<<<<<< HEAD
     res.render('login.ejs',{message: message});
+=======
+    res.render('register',{message: message});
+>>>>>>> origin/node_js
   }        
 };
 
@@ -68,6 +88,7 @@ exports.register = function(req, res){
   }
 };
 
+<<<<<<< HEAD
 exports.saveAppointment = function(req, res){
   var message = '';
   if(req.method == "POST"){
@@ -175,6 +196,8 @@ exports.sendEmail = function(req, res){
   }
 };
 
+=======
+>>>>>>> origin/node_js
 exports.account = function(req, res, next){
 
   var user =  req.session.user;
@@ -182,11 +205,16 @@ exports.account = function(req, res, next){
 
   if(userId == null || user == null){
     req.session.reset();
+<<<<<<< HEAD
     res.redirect('/login');
+=======
+    res.redirect("login");
+>>>>>>> origin/node_js
     return;
   }
 
   var sql="SELECT * FROM `users` WHERE `id`='"+userId+"'";
+<<<<<<< HEAD
   var sql_app = 'SELECT * FROM appointment WHERE user_id = ' + userId;
 
   pool.getConnection((err, connection) => {
@@ -216,12 +244,20 @@ exports.account = function(req, res, next){
     });
   });
 /*  db.query(sql, function(err, results){
+=======
+
+  db.query(sql, function(err, results){
+>>>>>>> origin/node_js
 
     console.log(results);
 
     res.render('account');
 
+<<<<<<< HEAD
   });*/
+=======
+  });
+>>>>>>> origin/node_js
 };
 
 exports.logout = function (req, res){
