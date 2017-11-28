@@ -46,7 +46,6 @@ app.get('/team', (req, res) => {
 	handle_db_call(req, res, 'team', 'SELECT * FROM staff');
 });
 
-<<<<<<< HEAD
 app.get('/appointment/:appointmentId', (req, res) => {
 	var sql = "UPDATE `wad`.`appointment` SET `is_cancelled`='1' WHERE `id`= " + req.params.appointmentId;
 
@@ -63,12 +62,11 @@ app.get('/appointment/:appointmentId', (req, res) => {
 app.get('/account', (req, res) => {
 	res.render('account', {route:'account'});
 });*/
-=======
+
 // ACCOUNT
 app.get('/account', (req, res) => {
 	res.render('account', {route:'account'});
 });
->>>>>>> origin/node_js
 
 // SERVICES
 app.get('/services', (req, res) => {
@@ -141,7 +139,6 @@ function handle_db_call(req, res, page, query) {
 
 
 //PART 2
-<<<<<<< HEAD
 
 
 //Middleware
@@ -156,7 +153,7 @@ app.post('/sendEmail', user.sendEmail)//call for sendEmail from contact Page
 
 app.get('/logout', user.logout);
 app.get('/account', user.account); //call for dashboard page after login
-=======
+
 var routes  = require('routes')
 var user    = require('./routes/user');
 var session = require('client-sessions');
@@ -189,7 +186,6 @@ app.post('/register', user.register);//call for signup post
 
 app.get('/logout', user.logout);
 app.get('acount', user.account); //call for dashboard page after login
->>>>>>> origin/node_js
 
 
 //rest api to get all results
