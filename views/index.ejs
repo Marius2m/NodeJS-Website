@@ -3,24 +3,41 @@
 
 <div class="showcase">
       <div class="description">
-        <p class="title">Professional Dental Clinic</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, itaque!</p>
+        <% data.map(homepage => { %>
+        <p class="title"> <%= data.descriptionTitle %> Professional Dental Clinic</p>
+        <p>
+            <%= homepage.description %>
+        </p>
       </div>
 </div>
 
+<section>
+	<div class="section-title">
+		<%= homepage.firstSection %>
+	</div>
+
+	<div class="section-container">
+    <%= homepage.firstSectionDescription %>
+  </div>
+</section>
+
+<hr class="separator">
 
 <section id="boxes">
   	<div class="section-title">
-  		<p>Check our services!</p>
+  		<p> <%= homepage.secondSectionTitle %></p>
   	</div>
+    <div class="section-container">
+      <%= homepage.secondSectionDescription %>
+    </div>
   	<div class="container-box">
 	    <div class="cardBox">
 	      <div class="box implants">
 	        <div class="b-front">
 	          <img src="assets/img/DI.png">
 	        </div>
-	        <div class="b-back">
-	          Dental Implants
+	        <div class="b-back"> <a class="remove" href="/services">
+	          Dental Implants </a>
 	        </div>
 	      </div>
 	    </div>
@@ -29,8 +46,8 @@
 	        <div class="b-front">
 	          <img src="assets/img/TW.png">
 	        </div>
-	        <div class="b-back">
-	          Teeth Whitening
+	        <div class="b-back"> <a class="remove" href="/services">
+	          Teeth Whitening </a>
 	        </div>
 	      </div>
 	    </div>
@@ -39,8 +56,8 @@
 	        <div class="b-front">
 	          <img src="assets/img/CB.png">
 	        </div>
-	        <div class="b-back">
-	          Clear Braces
+	        <div class="b-back"> <a class="remove" href="/services">
+	          Clear Braces </a>
 	        </div>
 	      </div>
 	    </div>
@@ -49,29 +66,60 @@
 	        <div class="b-front">
 	          <img src="assets/img/TT3.png">
 	        </div>
-	        <div class="b-back">
-	          Teeth Treatment
+	        <div class="b-back"> <a class="remove" href="/services">
+	          Teeth Treatment </a>
 	        </div>
 	      </div>
 	    </div>
 	</div>
 </section>
+<hr class="separator">
+
+<section class="gallery-section">
+	<div class="section-title">
+    <%= homepage.thirdSectionTitle %>
+	</div>
+
+	<div class="gallery-container">
+    <% if(homepage.pic_1 !== null) { %>
+		<img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_1 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_2 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_2 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_3 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_3 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_4 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_4 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_5 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_5 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_6 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_6 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_7 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_7 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_8 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_8 %>.jpg" />
+    <% } %>
+    <% if(homepage.pic_9 !== null) { %>
+    <img class="gallery" tabindex="1" src="assets/img/clinic-pictures/<%- homepage.pic_9 %>.jpg" />
+    <% } %>
+
+	</div>
+</section>
 
 <hr class="separator">
 
-<section>
-	<div class="section-title">
-		Some next title
-	</div>
-
-	<div class="section-container">
-		Some data to come
-	</div>
-</section>	
-
 <div id="quote">
-  <blockquote>Life is short, so smile while you still have teeth!</blockquote>
+  <blockquote>
+    <%= homepage.homepageQuote%>
+  </blockquote>
 </div>
+<% }) %>
 
 
 <% include partials/footer %>

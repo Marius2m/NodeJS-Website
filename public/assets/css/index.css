@@ -1,7 +1,12 @@
+body {
+  background: #EFEFEF;
+}
+
 .showcase {
-  min-height: 400px;
-  background: url('../img/showcase.jpg') no-repeat 10% 45%;
+  min-height: 100vh;
+  background: url('../img/showcase.jpg') no-repeat center; //10% 45%;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .showcase .description {
@@ -17,19 +22,38 @@
   margin-bottom: 25px;
 }
 
+/* Rotating Cards */
 .container-box {
+  width: 100%;
   display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-justify-content: space-around;
-          justify-content: space-around;
-  width: 80%;
-  margin-left: 10%;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+          justify-content: center;
+          list-style: none;
+  align-items: center;
+}
+
+@media (min-width: 680px) {
+  .container-box {
+    width: 90%;
+    margin-left: 5%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container-box {
+    flex-wrap: nowrap;
+    width: 60%;
+    margin-left: 20%;
+  }
 }
 
 .cardbox {
-  perspective: 500px;
   margin: 20px;
 }
 
@@ -97,16 +121,63 @@
   width: 90%;
 }
 
-
 .section-container {
   width: 80%;
   margin-left: 10%;
-  padding: 30px; 
+  padding: 30px;
 }
+
+.remove{
+  color: #fff;
+  text-decoration: none;
+  color: inherit;
+}
+
+.remove:hover{
+  color: #e6e6e6;
+}
+
+/* Gallery */
+.gallery-container {
+  width: 90%;
+  padding: 0;
+  margin: 0;
+  margin-left: 5%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.gallery {
+  border-radius: 1px;
+  max-width: 80%;
+  margin-left: 20px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all ease-in-out .2s;
+}
+
+@media (min-width: 50em){
+  .gallery {
+    max-width: 40%;
+  }
+}
+
+@media (min-width: 70em){
+  .gallery {
+    max-width: 30%;
+  }
+}
+
+.gallery:hover {
+  transform: scale(1.11);
+}
+
 
 /* Quote Div */
 #quote{
-  margin-top: 60px;
   width: 100%;
   padding: 20px 20%;
   background: url(../img/quote.png) no-repeat center 20px;
