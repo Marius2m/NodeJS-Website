@@ -1,3 +1,3 @@
-# WAD
+# NodeJS Project
 
-## Initial configuration for the static page only HTML,CSS,JS
+## Dental Clinic website using NodeJS with Express, HTML and CSS, and basic SQL for staff/ clients accounts (and appointments)
